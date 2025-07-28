@@ -41,84 +41,132 @@ export default function PlayHermitage() {
         </nav>
 
         <main className={styles.main}>
-          <div className={styles.header}>
+          <div className={styles.heroSection}>
             <div className={styles.backLink}>
-              <Link href="/projects" className={styles.backBtn}>← Back to Projects</Link>
+              <Link href="/projects" className={styles.backBtn}>
+                <span className={styles.backArrow}>←</span>
+                Back to Projects
+              </Link>
             </div>
-            <h1 className={styles.title}>🎮 Hermitage - 2D Platformer</h1>
-            <p className={styles.subtitle}>
-              A challenging 2D platformer game built with Unity and WebGL. 
-              Navigate through levels, overcome obstacles, and test your skills!
-            </p>
+            
+            <div className={styles.heroContent}>
+              <div className={styles.gameBadge}>🎮 GAME</div>
+              <h1 className={styles.title}>
+                <span className={styles.titleMain}>Hermitage</span>
+                <span className={styles.titleSub}>2D Platformer Adventure</span>
+              </h1>
+              <p className={styles.subtitle}>
+                Embark on an epic journey through mysterious landscapes. 
+                Jump, dash, and explore your way through challenging levels 
+                in this beautifully crafted 2D platformer.
+              </p>
+              
+              <div className={styles.heroStats}>
+                <div className={styles.stat}>
+                  <span className={styles.statNumber}>6</span>
+                  <span className={styles.statLabel}>Levels</span>
+                </div>
+                <div className={styles.stat}>
+                  <span className={styles.statNumber}>∞</span>
+                  <span className={styles.statLabel}>Fun</span>
+                </div>
+                <div className={styles.stat}>
+                  <span className={styles.statNumber}>4</span>
+                  <span className={styles.statLabel}>Controls</span>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className={styles.gameContainer}>
-            <div className={styles.gameInfo}>
-              <div className={styles.controls}>
-                <h3>🎮 Controls</h3>
-                <ul>
+          <div className={styles.gameSection}>
+            <div className={styles.gameContainer}>
+              <div className={styles.gameFrame}>
+                <div className={styles.gamePlaceholder}>
+                  <div className={styles.gameIcon}>🎮</div>
+                  <h3>Ready to Play?</h3>
+                  <p>Click the button below to launch Hermitage in a new tab</p>
+                  <a 
+                    href="/webherm/index.html" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className={styles.playButton}
+                  >
+                    <span className={styles.playIcon}>▶</span>
+                    Launch Hermitage
+                  </a>
+                  <div className={styles.gameNote}>
+                    <span className={styles.noteIcon}>💡</span>
+                    Opens in new tab for optimal performance
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.infoGrid}>
+              <div className={styles.infoCard}>
+                <div className={styles.cardIcon}>🎯</div>
+                <h3>Controls</h3>
+                <ul className={styles.controlsList}>
                   <li><strong>WASD</strong> or <strong>Arrow Keys</strong> - Move</li>
                   <li><strong>Space</strong> - Jump</li>
                   <li><strong>Mouse</strong> - Look around</li>
                   <li><strong>ESC</strong> - Pause/Menu</li>
                 </ul>
               </div>
-              
-              <div className={styles.features}>
-                <h3>✨ Game Features</h3>
-                <ul>
+
+              <div className={styles.infoCard}>
+                <div className={styles.cardIcon}>✨</div>
+                <h3>Features</h3>
+                <ul className={styles.featuresList}>
                   <li>Smooth 2D platformer gameplay</li>
                   <li>Multiple challenging levels</li>
                   <li>Engaging mechanics and obstacles</li>
                   <li>Responsive controls</li>
-                  <li>Built with Unity and WebGL</li>
+                  <li>Beautiful pixel art graphics</li>
                 </ul>
               </div>
 
-              <div className={styles.gameNotice}>
-                <h3>⚠️ Important Note</h3>
-                <p>
-                  This Unity WebGL game requires HTTPS to run properly due to Brotli compression. 
-                  For the best experience, please use the &quot;Open in New Tab&quot; option below.
-                </p>
-              </div>
-            </div>
-
-            <div className={styles.gameFrame}>
-              <div className={styles.gamePlaceholder}>
-                <div className={styles.gameIcon}>🎮</div>
-                <h3>Hermitage - 2D Platformer</h3>
-                <p>Click the button below to play the game in a new tab</p>
-                <a 
-                  href="/webherm/index.html" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className={styles.playButton}
-                >
-                  🎮 Play Hermitage
-                </a>
-                <div className={styles.gameInfo}>
-                  <p><strong>Note:</strong> The game will open in a new tab for optimal performance.</p>
+              <div className={styles.infoCard}>
+                <div className={styles.cardIcon}>🛠️</div>
+                <h3>Built With</h3>
+                <div className={styles.techGrid}>
+                  <span className={styles.techTag}>Unity</span>
+                  <span className={styles.techTag}>C#</span>
+                  <span className={styles.techTag}>WebGL</span>
+                  <span className={styles.techTag}>2D Platformer</span>
                 </div>
+              </div>
+
+              <div className={styles.infoCard}>
+                <div className={styles.cardIcon}>📱</div>
+                <h3>Compatibility</h3>
+                <ul className={styles.compatibilityList}>
+                  <li>✅ Desktop browsers</li>
+                  <li>✅ Modern WebGL support</li>
+                  <li>✅ Fullscreen mode</li>
+                  <li>⚠️ Mobile not supported</li>
+                </ul>
               </div>
             </div>
           </div>
 
-          <div className={styles.gameFooter}>
-            <div className={styles.techInfo}>
-              <h3>🛠️ Built With</h3>
-              <div className={styles.techTags}>
-                <span className={styles.techTag}>Unity</span>
-                <span className={styles.techTag}>C#</span>
-                <span className={styles.techTag}>WebGL</span>
-                <span className={styles.techTag}>2D Platformer</span>
+          <div className={styles.ctaSection}>
+            <div className={styles.ctaContent}>
+              <h2>Ready for the Challenge?</h2>
+              <p>Test your skills and see how far you can go in Hermitage!</p>
+              <div className={styles.ctaButtons}>
+                <a 
+                  href="/webherm/index.html" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={styles.ctaPrimary}
+                >
+                  🎮 Play Now
+                </a>
+                <Link href="/projects" className={styles.ctaSecondary}>
+                  View All Projects
+                </Link>
               </div>
-            </div>
-            
-            <div className={styles.links}>
-              <Link href="/projects" className={styles.backToProjects}>
-                View All Projects
-              </Link>
             </div>
           </div>
         </main>
