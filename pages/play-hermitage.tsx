@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
-import styles from "@/styles/PlayGame.module.css";
+import styles from "../styles/PlayGame.module.css";
+import { useEffect } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,6 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 export default function PlayHermitage() {
+  useEffect(() => {
+    console.log("PlayHermitage page loaded");
+  }, []);
+
   return (
     <>
       <Head>
@@ -24,8 +29,9 @@ export default function PlayHermitage() {
       </Head>
       <div
         className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
+        style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}
       >
-        <nav className={styles.navbar}>
+        <nav className={styles.navbar} style={{ background: 'rgba(255, 255, 255, 0.95)', padding: '16px 0' }}>
           <div className={styles.navContainer}>
             <div className={styles.logo}>
               <Link href="/">My Website</Link>
