@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
+import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 
@@ -28,14 +28,14 @@ export default function Home() {
         <nav className={styles.navbar}>
           <div className={styles.navContainer}>
             <div className={styles.logo}>
-              <a href="/">My Website</a>
+              <Link href="/">My Website</Link>
             </div>
             <ul className={styles.navLinks}>
-              <li><a href="/">Home</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/projects">Projects</a></li>
-              <li><a href="/blog">Blog</a></li>
-              <li><a href="/contact">Contact</a></li>
+              <li><Link href="/">Home</Link></li>
+              <li><Link href="/about">About</Link></li>
+              <li><Link href="/projects">Projects</Link></li>
+              <li><Link href="/blog">Blog</Link></li>
+              <li><Link href="/contact">Contact</Link></li>
             </ul>
           </div>
         </nav>
@@ -44,7 +44,7 @@ export default function Home() {
           <div className={styles.hero}>
             <h1 className={styles.title}>Welcome to My World</h1>
             <p className={styles.subtitle}>
-              Hi there! I'm passionate about creating amazing things and sharing my journey with the world.
+              Hi there! I&apos;m passionate about creating amazing things and sharing my journey with the world.
             </p>
           </div>
 
@@ -52,9 +52,9 @@ export default function Home() {
             <section className={styles.section}>
               <h2>About Me</h2>
               <p>
-                I'm a creative individual who loves exploring new technologies, 
+                I&apos;m a creative individual who loves exploring new technologies, 
                 building meaningful projects, and connecting with like-minded people. 
-                When I'm not coding or learning, you'll find me exploring new places, 
+                When I&apos;m not coding or learning, you&apos;ll find me exploring new places, 
                 reading interesting books, or experimenting with new ideas.
               </p>
             </section>
@@ -80,7 +80,7 @@ export default function Home() {
             <section className={styles.section}>
               <h2>Get In Touch</h2>
               <p>
-                I'd love to hear from you! Whether you want to collaborate on a project, 
+                I&apos;d love to hear from you! Whether you want to collaborate on a project, 
                 share ideas, or just say hello, feel free to reach out.
               </p>
               <div className={styles.ctas}>
@@ -92,12 +92,12 @@ export default function Home() {
                 >
                   Say Hello
                 </a>
-                <a
-                  href="#projects"
+                <Link
+                  href="/projects"
                   className={styles.secondary}
                 >
                   View My Work
-                </a>
+                </Link>
               </div>
             </section>
           </div>

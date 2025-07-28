@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import styles from "@/styles/PlayGame.module.css";
 
@@ -27,14 +28,14 @@ export default function PlayHermitage() {
         <nav className={styles.navbar}>
           <div className={styles.navContainer}>
             <div className={styles.logo}>
-              <a href="/">My Website</a>
+              <Link href="/">My Website</Link>
             </div>
             <ul className={styles.navLinks}>
-              <li><a href="/">Home</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/projects">Projects</a></li>
-              <li><a href="/blog">Blog</a></li>
-              <li><a href="/contact">Contact</a></li>
+              <li><Link href="/">Home</Link></li>
+              <li><Link href="/about">About</Link></li>
+              <li><Link href="/projects">Projects</Link></li>
+              <li><Link href="/blog">Blog</Link></li>
+              <li><Link href="/contact">Contact</Link></li>
             </ul>
           </div>
         </nav>
@@ -42,7 +43,7 @@ export default function PlayHermitage() {
         <main className={styles.main}>
           <div className={styles.header}>
             <div className={styles.backLink}>
-              <a href="/projects" className={styles.backBtn}>← Back to Projects</a>
+              <Link href="/projects" className={styles.backBtn}>← Back to Projects</Link>
             </div>
             <h1 className={styles.title}>🎮 Hermitage - 2D Platformer</h1>
             <p className={styles.subtitle}>
@@ -78,7 +79,7 @@ export default function PlayHermitage() {
                 <h3>⚠️ Important Note</h3>
                 <p>
                   This Unity WebGL game requires HTTPS to run properly due to Brotli compression. 
-                  For the best experience, please use the "Open in New Tab" option below.
+                  For the best experience, please use the &quot;Open in New Tab&quot; option below.
                 </p>
               </div>
             </div>
@@ -115,9 +116,9 @@ export default function PlayHermitage() {
             </div>
             
             <div className={styles.links}>
-              <a href="/projects" className={styles.backToProjects}>
+              <Link href="/projects" className={styles.backToProjects}>
                 View All Projects
-              </a>
+              </Link>
             </div>
           </div>
         </main>

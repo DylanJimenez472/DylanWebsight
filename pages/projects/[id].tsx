@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { Geist, Geist_Mono } from "next/font/google";
 import styles from "@/styles/ProjectDetail.module.css";
@@ -161,8 +162,8 @@ export default function ProjectDetail() {
       <div className={styles.page}>
         <div className={styles.error}>
           <h1>Project Not Found</h1>
-          <p>The project you're looking for doesn't exist.</p>
-          <a href="/projects" className={styles.backBtn}>Back to Projects</a>
+          <p>The project you&apos;re looking for doesn&apos;t exist.</p>
+          <Link href="/projects" className={styles.backBtn}>Back to Projects</Link>
         </div>
       </div>
     );
@@ -182,21 +183,21 @@ export default function ProjectDetail() {
         <nav className={styles.navbar}>
           <div className={styles.navContainer}>
             <div className={styles.logo}>
-              <a href="/">My Website</a>
+              <Link href="/">My Website</Link>
             </div>
             <ul className={styles.navLinks}>
-              <li><a href="/">Home</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/projects" className={styles.active}>Projects</a></li>
-              <li><a href="/blog">Blog</a></li>
-              <li><a href="/contact">Contact</a></li>
+              <li><Link href="/">Home</Link></li>
+              <li><Link href="/about">About</Link></li>
+              <li><Link href="/projects" className={styles.active}>Projects</Link></li>
+              <li><Link href="/blog">Blog</Link></li>
+              <li><Link href="/contact">Contact</Link></li>
             </ul>
           </div>
         </nav>
 
         <main className={styles.main}>
           <div className={styles.backLink}>
-            <a href="/projects" className={styles.backBtn}>← Back to Projects</a>
+            <Link href="/projects" className={styles.backBtn}>← Back to Projects</Link>
           </div>
 
           <div className={styles.projectHeader}>

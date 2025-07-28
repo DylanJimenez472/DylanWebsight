@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import styles from "@/styles/Projects.module.css";
 
@@ -90,14 +91,14 @@ export default function Projects() {
         <nav className={styles.navbar}>
           <div className={styles.navContainer}>
             <div className={styles.logo}>
-              <a href="/">My Website</a>
+              <Link href="/">My Website</Link>
             </div>
             <ul className={styles.navLinks}>
-              <li><a href="/">Home</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/projects" className={styles.active}>Projects</a></li>
-              <li><a href="/blog">Blog</a></li>
-              <li><a href="/contact">Contact</a></li>
+              <li><Link href="/">Home</Link></li>
+              <li><Link href="/about">About</Link></li>
+              <li><Link href="/projects" className={styles.active}>Projects</Link></li>
+              <li><Link href="/blog">Blog</Link></li>
+              <li><Link href="/contact">Contact</Link></li>
             </ul>
           </div>
         </nav>
@@ -106,7 +107,7 @@ export default function Projects() {
           <div className={styles.header}>
             <h1 className={styles.title}>My Projects</h1>
             <p className={styles.subtitle}>
-              Here are some of the projects I've worked on. Each one represents a unique challenge and learning experience.
+              Here are some of the projects I&apos;ve worked on. Each one represents a unique challenge and learning experience.
             </p>
           </div>
 
@@ -140,9 +141,9 @@ export default function Projects() {
                           🎮 Play Game
                         </a>
                       ) : (
-                        <a href={`/projects/${project.id}`} className={styles.seeMoreBtn}>
+                        <Link href={`/projects/${project.id}`} className={styles.seeMoreBtn}>
                           See More
-                        </a>
+                        </Link>
                       )}
                     </div>
                   </div>

@@ -1,9 +1,6 @@
 import { useEffect } from 'react';
-import { useRouter } from 'next/router';
 
 export default function WebHermRedirect() {
-  const router = useRouter();
-
   useEffect(() => {
     // Redirect to the actual game file
     window.location.href = '/webherm/index.html';
@@ -19,7 +16,7 @@ export default function WebHermRedirect() {
     }}>
       <div style={{ textAlign: 'center' }}>
         <h2>Loading Hermitage Game...</h2>
-        <p>If you're not redirected automatically, <a href="/webherm/index.html">click here</a></p>
+        <p>If you&apos;re not redirected automatically, <a href="/webherm/index.html">click here</a></p>
       </div>
     </div>
   );
