@@ -1,0 +1,413 @@
+.page {
+  --gray-rgb: 0, 0, 0;
+  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
+  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
+
+  --button-primary-hover: #383838;
+  --button-secondary-hover: #f2f2f2;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100svh;
+  font-family: var(--font-geist-sans);
+  color: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  .page {
+    --gray-rgb: 255, 255, 255;
+    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
+    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
+
+    --button-primary-hover: #ccc;
+    --button-secondary-hover: #1a1a1a;
+  }
+}
+
+.navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.logo a:hover {
+  color: #667eea;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 32px;
+}
+
+.navLinks li a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.navLinks li a:hover,
+.navLinks li a.active {
+  color: #667eea;
+  border-bottom-color: #667eea;
+}
+
+.main {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.backLink {
+  margin-bottom: 32px;
+}
+
+.backBtn {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.backBtn:hover {
+  color: #5a6fd8;
+}
+
+.projectHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 64px;
+  align-items: start;
+}
+
+.projectImage {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.projectInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.category {
+  background: #f0f0f0;
+  color: #666666;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+  color: #000000;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333333;
+  margin: 0;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.techTag {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.links {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.githubBtn,
+.liveBtn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: inline-block;
+}
+
+.githubBtn {
+  background: #000000;
+  color: #ffffff;
+}
+
+.liveBtn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+}
+
+.githubBtn:hover,
+.liveBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.projectDetails {
+  display: grid;
+  gap: 48px;
+}
+
+.section {
+  background: #f8f9fa;
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid #e5e5e5;
+}
+
+.section h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0 0 24px 0;
+  color: #000000;
+}
+
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.featuresList li {
+  padding: 12px 16px;
+  background: #ffffff;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+  font-size: 1rem;
+  color: #333333;
+}
+
+.challengeSolution {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.challenge,
+.solution {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+}
+
+.challenge h3,
+.solution h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  color: #000000;
+}
+
+.challenge h3 {
+  color: #d32f2f;
+}
+
+.solution h3 {
+  color: #2e7d32;
+}
+
+.challenge p,
+.solution p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333333;
+  margin: 0;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  padding: 40px 24px;
+}
+
+.error h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  color: #000000;
+}
+
+.error p {
+  font-size: 1.1rem;
+  color: #666666;
+  margin: 0 0 32px 0;
+}
+
+.footer {
+  background: #f8f9fa;
+  border-top: 1px solid #e5e5e5;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+  color: #666666;
+  font-size: 0.9rem;
+}
+
+.social {
+  display: flex;
+  gap: 24px;
+}
+
+.socialLink {
+  color: #666666;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.socialLink:hover {
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+  .navContainer {
+    padding: 0 16px;
+  }
+
+  .navLinks {
+    gap: 16px;
+  }
+
+  .navLinks li a {
+    font-size: 0.9rem;
+  }
+
+  .main {
+    padding: 32px 16px;
+  }
+
+  .projectHeader {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .challengeSolution {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .section {
+    padding: 24px;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 0;
+  }
+
+  .main {
+    padding: 24px 16px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .links {
+    flex-direction: column;
+  }
+
+  .githubBtn,
+  .liveBtn {
+    text-align: center;
+  }
+
+  .navLinks {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .logo {
+    filter: invert();
+  }
+} 

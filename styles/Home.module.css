@@ -7,13 +7,10 @@
   --button-secondary-hover: #f2f2f2;
 
   display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
+  grid-template-rows: auto 1fr auto;
   min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
   font-family: var(--font-geist-sans);
+  color: #000000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,51 +24,182 @@
   }
 }
 
+.navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.logo a:hover {
+  color: #667eea;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 32px;
+}
+
+.navLinks li a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.navLinks li a:hover {
+  color: #667eea;
+  border-bottom-color: #667eea;
+}
+
 .main {
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+  gap: 64px;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 80px 24px;
 }
 
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
+.hero {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0 0 24px 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #333333;
   margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 }
 
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
-  border-radius: 4px;
+.section {
+  background: #f8f9fa;
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid #e5e5e5;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+  font-size: 1.75rem;
   font-weight: 600;
+  margin: 0 0 16px 0;
+  color: #000000;
+}
+
+.section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333333;
+  margin: 0;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.skill {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.skill:hover {
+  transform: translateY(-4px);
+}
+
+.skill h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  color: #000000;
+}
+
+.skill p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333333;
+  margin: 0;
 }
 
 .ctas {
   display: flex;
   gap: 16px;
+  margin-top: 24px;
+  justify-content: center;
 }
 
 .ctas a {
   appearance: none;
   border-radius: 128px;
   height: 48px;
-  padding: 0 20px;
+  padding: 0 24px;
   border: none;
   border: 1px solid transparent;
   transition:
     background 0.2s,
     color 0.2s,
-    border-color 0.2s;
+    border-color 0.2s,
+    transform 0.2s;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -79,69 +207,118 @@
   font-size: 16px;
   line-height: 20px;
   font-weight: 500;
+  text-decoration: none;
 }
 
 a.primary {
-  background: var(--foreground);
-  color: var(--background);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
   gap: 8px;
 }
 
 a.secondary {
-  border-color: var(--gray-alpha-200);
+  border-color: #e5e5e5;
   min-width: 158px;
+  color: #000000;
+  background: #ffffff;
 }
 
 .footer {
-  grid-row-start: 3;
+  background: #f8f9fa;
+  border-top: 1px solid #e5e5e5;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+  color: #666666;
+  font-size: 0.9rem;
+}
+
+.social {
   display: flex;
   gap: 24px;
 }
 
-.footer a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.socialLink {
+  color: #666666;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
 }
 
-.footer img {
-  flex-shrink: 0;
+.socialLink:hover {
+  color: #000000;
 }
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   a.primary:hover {
-    background: var(--button-primary-hover);
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
     border-color: transparent;
+    transform: translateY(-2px);
   }
 
   a.secondary:hover {
-    background: var(--button-secondary-hover);
+    background: #f2f2f2;
     border-color: transparent;
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 768px) {
+  .navContainer {
+    padding: 0 16px;
   }
 
-  .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
+  .navLinks {
+    gap: 16px;
+  }
+
+  .navLinks li a {
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 600px) {
   .page {
-    padding: 32px;
-    padding-bottom: 80px;
+    padding: 0;
   }
 
   .main {
-    align-items: center;
+    padding: 40px 16px;
+    gap: 48px;
   }
 
-  .main ol {
-    text-align: center;
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .section {
+    padding: 24px;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+
+  .skills {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .ctas {
     flex-direction: column;
+    width: 100%;
   }
 
   .ctas a {
@@ -154,10 +331,12 @@ a.secondary {
     min-width: auto;
   }
 
-  .footer {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+  .social {
+    gap: 16px;
+  }
+
+  .navLinks {
+    display: none;
   }
 }
 
