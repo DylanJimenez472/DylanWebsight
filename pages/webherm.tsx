@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import Link from 'next/link';
 
 export default function WebHermRedirect() {
   useEffect(() => {
@@ -16,7 +17,7 @@ export default function WebHermRedirect() {
     }}>
       <div style={{ textAlign: 'center' }}>
         <h2>Loading Hermitage Game...</h2>
-        <p>If you&apos;re not redirected automatically, <a href="/webherm/index.html">click here</a></p>
+        <p>If you&apos;re not redirected automatically, <Link href="/webherm/index.html">click here</Link></p>
       </div>
     </div>
   );
