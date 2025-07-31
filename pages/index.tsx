@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import ImageCarousel from "@/components/ImageCarousel";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +29,7 @@ export default function Home() {
         <nav className={styles.navbar}>
           <div className={styles.navContainer}>
             <div className={styles.logo}>
-              <Link href="/">My Website</Link>
+              <Link href="/">DylanJimenez</Link>
             </div>
             <ul className={styles.navLinks}>
               <li><Link href="/">Home</Link></li>
@@ -46,6 +47,19 @@ export default function Home() {
             <p className={styles.subtitle}>
               Hi there! I&apos;m passionate about creating amazing things and sharing my journey with the world.
             </p>
+          </div>
+
+          <div className={styles.carouselSection}>
+            <ImageCarousel 
+              images={[
+                "/scrollPics/sample1.svg",
+                "/scrollPics/sample2.svg", 
+                "/scrollPics/sample3.svg",
+                "/scrollPics/sample4.svg",
+                "/scrollPics/sample5.svg"
+              ]} 
+              interval={4000}
+            />
           </div>
 
           <div className={styles.sections}>

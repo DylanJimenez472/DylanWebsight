@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import styles from "../styles/PlayGame.module.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export default function PlayHermitage() {
+  const [gameLoaded, setGameLoaded] = useState(false);
+  const [gameError, setGameError] = useState(false);
+
   useEffect(() => {
     console.log("PlayHermitage page loaded");
   }, []);
@@ -34,7 +37,7 @@ export default function PlayHermitage() {
         <nav className={styles.navbar} style={{ background: 'rgba(255, 255, 255, 0.95)', padding: '16px 0' }}>
           <div className={styles.navContainer}>
             <div className={styles.logo}>
-              <Link href="/">My Website</Link>
+              <Link href="/">DylanJimenez</Link>
             </div>
             <ul className={styles.navLinks}>
               <li><Link href="/">Home</Link></li>
@@ -87,24 +90,47 @@ export default function PlayHermitage() {
           <div className={styles.gameSection}>
             <div className={styles.gameContainer}>
               <div className={styles.gameFrame}>
-                <div className={styles.gamePlaceholder}>
-                  <div className={styles.gameIcon}>🎮</div>
-                  <h3>Ready to Play?</h3>
-                  <p>Click the button below to launch Hermitage in a new tab</p>
-                  <a 
-                    href="/webherm/index.html" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className={styles.playButton}
-                  >
-                    <span className={styles.playIcon}>▶</span>
-                    Launch Hermitage
-                  </a>
-                  <div className={styles.gameNote}>
-                    <span className={styles.noteIcon}>💡</span>
-                    Opens in new tab for optimal performance
+                {!gameLoaded && !gameError && (
+                  <div className={styles.gamePlaceholder}>
+                    <div className={styles.gameIcon}>🎮</div>
+                    <h3>Loading Game...</h3>
+                    <p>Please wait while Hermitage loads</p>
+                    <div className={styles.loadingSpinner}></div>
                   </div>
-                </div>
+                )}
+                
+                {gameError && (
+                  <div className={styles.gamePlaceholder}>
+                    <div className={styles.gameIcon}>⚠️</div>
+                    <h3>Game Loading Error</h3>
+                    <p>The game couldn't load properly. This might be due to browser compatibility or network issues.</p>
+                    <a 
+                      href="/webherm/index.html" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className={styles.playButton}
+                    >
+                      <span className={styles.playIcon}>▶</span>
+                      Open in New Tab
+                    </a>
+                  </div>
+                )}
+
+                <iframe 
+                  src="/webherm/index.html"
+                  title="Hermitage - 2D Platformer Game"
+                  className={styles.gameIframe}
+                  onLoad={() => setGameLoaded(true)}
+                  onError={() => setGameError(true)}
+                  allowFullScreen
+                  allow="autoplay; fullscreen; microphone; camera; geolocation"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    border: 'none',
+                    display: gameLoaded ? 'block' : 'none'
+                  }}
+                />
               </div>
             </div>
 
@@ -167,7 +193,7 @@ export default function PlayHermitage() {
                   rel="noopener noreferrer" 
                   className={styles.ctaPrimary}
                 >
-                  🎮 Play Now
+                  🎮 Open in New Tab
                 </a>
                 <Link href="/projects" className={styles.ctaSecondary}>
                   View All Projects

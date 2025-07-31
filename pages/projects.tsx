@@ -20,7 +20,7 @@ const projects = [
     id: 1,
     name: "Hermitage - 2D Platformer",
     description: "A challenging 2D platformer game built with Unity and WebGL. Features smooth controls, multiple levels, and engaging gameplay mechanics.",
-    image: "/hermitage-thumbnail.jpg",
+    image: "/Images/hermitage-thumbnail.png",
     category: "Game Development",
     technologies: ["Unity", "C#", "WebGL", "2D Platformer"],
     isGame: true,
@@ -32,7 +32,8 @@ const projects = [
     description: "A full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.",
     image: "/project1.jpg",
     category: "Web Development",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe"]
+    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+    isDemo: true
   },
   {
     id: 3,
@@ -40,7 +41,8 @@ const projects = [
     description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
     image: "/project2.jpg",
     category: "Mobile App",
-    technologies: ["React Native", "Firebase", "Redux"]
+    technologies: ["React Native", "Firebase", "Redux"],
+    isDemo: true
   },
   {
     id: 4,
@@ -48,7 +50,8 @@ const projects = [
     description: "A modern, responsive portfolio website built with Next.js and styled-components. Features smooth animations and SEO optimization.",
     image: "/project3.jpg",
     category: "Web Design",
-    technologies: ["Next.js", "Styled Components", "Framer Motion"]
+    technologies: ["Next.js", "Styled Components", "Framer Motion"],
+    isDemo: true
   },
   {
     id: 5,
@@ -56,7 +59,8 @@ const projects = [
     description: "A weather dashboard that displays current conditions, forecasts, and historical data with interactive charts and maps.",
     image: "/project4.jpg",
     category: "Data Visualization",
-    technologies: ["JavaScript", "Chart.js", "OpenWeather API"]
+    technologies: ["JavaScript", "Chart.js", "OpenWeather API"],
+    isDemo: true
   },
   {
     id: 6,
@@ -64,7 +68,8 @@ const projects = [
     description: "A social media platform with features like posts, comments, likes, and real-time notifications using WebSockets.",
     image: "/project5.jpg",
     category: "Full Stack",
-    technologies: ["React", "Express", "Socket.io", "PostgreSQL"]
+    technologies: ["React", "Express", "Socket.io", "PostgreSQL"],
+    isDemo: true
   },
   {
     id: 7,
@@ -72,7 +77,8 @@ const projects = [
     description: "An AI-powered chat assistant that helps users with customer support queries using natural language processing.",
     image: "/project6.jpg",
     category: "AI/ML",
-    technologies: ["Python", "TensorFlow", "Flask", "OpenAI API"]
+    technologies: ["Python", "TensorFlow", "Flask", "OpenAI API"],
+    isDemo: true
   }
 ];
 
@@ -91,7 +97,7 @@ export default function Projects() {
         <nav className={styles.navbar}>
           <div className={styles.navContainer}>
             <div className={styles.logo}>
-              <Link href="/">My Website</Link>
+              <Link href="/">DylanJimenez</Link>
             </div>
             <ul className={styles.navLinks}>
               <li><Link href="/">Home</Link></li>
@@ -153,6 +159,9 @@ export default function Projects() {
                   <span className={styles.projectCategory}>{project.category}</span>
                   {project.isGame && (
                     <span className={styles.gameBadge}>🎮 Playable</span>
+                  )}
+                  {project.isDemo && (
+                    <span className={styles.demoBadge}>🧪 Demo/Test</span>
                   )}
                 </div>
               </div>

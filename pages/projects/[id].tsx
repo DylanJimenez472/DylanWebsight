@@ -183,7 +183,7 @@ export default function ProjectDetail() {
         <nav className={styles.navbar}>
           <div className={styles.navContainer}>
             <div className={styles.logo}>
-              <Link href="/">My Website</Link>
+              <Link href="/">DylanJimenez</Link>
             </div>
             <ul className={styles.navLinks}>
               <li><Link href="/">Home</Link></li>
